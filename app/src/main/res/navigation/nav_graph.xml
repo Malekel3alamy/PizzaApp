@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment2">
+
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.example.pizzaapp.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.example.pizzaapp.ui.ProductDetailsFragment"
+        android:label="fragment_product_details"
+        tools:layout="@layout/fragment_product_details" />
+    <fragment
+        android:id="@+id/baseCategoryFragment2"
+        android:name="com.example.pizzaapp.ui.categories.BaseCategoryFragment"
+        android:label="fragment_base_category"
+        tools:layout="@layout/fragment_base_category" >
+        <action
+            android:id="@+id/action_baseCategoryFragment2_to_fishFragment2"
+            app:destination="@id/fishFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fishFragment2"
+        android:name="com.example.pizzaapp.ui.categories.FishFragment"
+        android:label="fragment_fish"
+        tools:layout="@layout/fragment_fish" />
+</navigation>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+
+
+
+
+
+
+
+
+
+    <style name="ImageRoundedCorners">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeTopLeft">10dp</item>
+        <item name="cornerSizeTopRight">10dp</item>
+        <item name="cornerSizeBottomLeft">10dp</item>
+        <item name="cornerSizeBottomRight">10dp</item>
+    </style>
+
+    <style name="ImageRoundedCorners_bckground">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeTopLeft">35dp</item>
+        <item name="cornerSizeTopRight">35dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="CutCorners" >
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+<!--        <item name="cornerSizeBottomLeft">10dp</item>-->
+<!--        <item name="cornerSizeBottomRight">10dp</item>-->
+    </style>
+
+
+    <style name="RoundedSquare">
+        <item name="cornerSize">20%</item>
+    </style>
+    <style name="SpecificCornerRounded">
+        <item name="cornerSizeTopRight">75dp</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerSizeBottomLeft">75dp</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+    </style>
+
+
+    <style name="editText">
+        
+        
+        
+    </style>
+
+
+    <dimen name="h4TextSize">35sp</dimen>
+    <dimen name="h2TextSize">17sp</dimen>
+    <dimen name="h3TextSize">22sp</dimen>
+
+
+</resources>

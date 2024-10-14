@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="155dp"
+    android:layout_height="207dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="15dp"
+    android:layout_marginStart="25dp"
+    android:layout_marginBottom="10dp"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/food_iv"
+        android:layout_width="103dp"
+        android:layout_height="85dp"
+        android:src="@color/black"
+        app:shapeAppearanceOverlay="@style/ImageRoundedCorners"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="10dp"
+        />
+    <ImageView
+        android:id="@+id/icon_bookmark_filled_iv"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:src="@drawable/ic_bookmark_filled"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/food_iv"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        />
+    <ImageView
+        android:id="@+id/icon_bookmark_outlined_iv"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:src="@drawable/ic_bookmark_outlined"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/food_iv"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/food_name_tv"
+        android:layout_width="129dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/inter_light"
+        android:text="Maison Thomas Pizza"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/food_iv" />
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/food_rb"
+        android:layout_width="62dp"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@id/food_name_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        android:numStars="5"
+        android:rating="4.5"
+        android:progressTint="@color/orange"
+        android:isIndicator="true"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/new_price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100 EGP"
+        app:layout_constraintTop_toBottomOf="@id/food_rb"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/inter_light"
+        android:textSize="16sp"
+        android:textColor="@color/blue"
+        />
+
+    <TextView
+        android:id="@+id/old_price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="120 EGP"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@id/food_rb"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/inter_light"
+        android:textSize="16sp"
+        />
+    <View
+        android:layout_width="50dp"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="@id/old_price_tv"
+        app:layout_constraintEnd_toEndOf="@id/old_price_tv"
+        app:layout_constraintTop_toTopOf="@id/old_price_tv"
+        app:layout_constraintBottom_toBottomOf="@id/old_price_tv"
+
+/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
