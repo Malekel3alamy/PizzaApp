@@ -1,20 +1,16 @@
-package com.example.pizzaapp.ui
+package com.example.pizzaapp.ui.categories
 
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.GridLayout
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pizzaapp.R
 import com.example.pizzaapp.adapters.BaseCategoryAdapter
-import com.example.pizzaapp.databinding.ActivityMainBinding
 import com.example.pizzaapp.databinding.FragmentBaseCategoryBinding
 import com.example.pizzaapp.model.products.Products
 import com.example.pizzaapp.utils.Resources
@@ -26,7 +22,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 open class BaseCategoryFragment : Fragment(R.layout.fragment_base_category) {
 
-     val productsViewModel by viewModels<ProductsViewModel>()
+     private val productsViewModel by viewModels<ProductsViewModel>()
      lateinit var binding: FragmentBaseCategoryBinding
      lateinit var product :Products
 
@@ -41,6 +37,7 @@ open class BaseCategoryFragment : Fragment(R.layout.fragment_base_category) {
         setupRV()
 
 
+        // moving to product details fragment
         productAdapter.onProductClick={
             val bundle = Bundle().apply {
                 putInt("product_id",it.id)
@@ -48,18 +45,22 @@ open class BaseCategoryFragment : Fragment(R.layout.fragment_base_category) {
             findNavController().navigate(R.id.action_homeFragment2_to_productDetailsFragment,bundle)
         }
 
+        // getting products from view model
         lifecycleScope.launch {
 
             productsViewModel.products.collectLatest {
                 when(it){
                     is Resources.Error -> {
+                        hidePR()
                         Toast.makeText(requireContext()," Error",Toast.LENGTH_SHORT).show()
                     }
                     is Resources.Loading -> {
+                        showPR()
                         Log.d("Loading","Loading State")
                     }
                     is Resources.Success -> {
                      productAdapter.differ.submitList(it.data)
+                        hidePR()
                     }
                     is Resources.UnSpecified -> {
                     }
@@ -68,10 +69,18 @@ open class BaseCategoryFragment : Fragment(R.layout.fragment_base_category) {
         }
     }
 
-
+ // setup recycler view
     private fun setupRV(){
 
         binding.productsRv.adapter = productAdapter
         binding.productsRv.layoutManager = GridLayoutManager(requireContext(),2)
+    }
+
+    private fun hidePR(){
+        binding.baseCategoryFragmentPR.visibility = View.INVISIBLE
+    }
+
+    private fun showPR(){
+        binding.baseCategoryFragmentPR.visibility = View.VISIBLE
     }
 }
